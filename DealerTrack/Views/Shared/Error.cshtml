@@ -1,0 +1,28 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "Error";
+}
+<h2>Error</h2>
+<div class="alert-danger alert">
+    @if (Response.StatusCode == 404)
+    {
+        <div>Sorry, the link you're trying to access is not available.</div>
+    }
+    else
+    {
+        <div>An unexpected error has occurred. Please try again later.</div>
+    }
+    
+    @if (Model != null)
+    {
+        <div>
+            
+            <h3 class="text-danger">Error.@Model.Exception.Message</h3>
+
+            <h4 class="text-danger">An error occurred while processing your request.</h4>
+
+            @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName)
+        </div>
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿#tblDeal {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.deal-grid {
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+
+/* MEDIA */
+@media screen and (min-width: 768px) {
+    .deal-grid {
+        -webkit-box-shadow: 0 0 5px 2px #CCC;
+        -moz-box-shadow: 0 0 5px 2px #CCC;
+        box-shadow: 0 0 5px 2px #CCC;
+        margin-top: 3.5rem;
+        padding: 2rem;
+    }
+}

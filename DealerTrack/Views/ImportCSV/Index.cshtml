@@ -1,0 +1,36 @@
+﻿@model DealerTrack.Models.ImportCSV.DealViewModel
+@{
+    ViewBag.Title = "Import CSV";
+}
+@Styles.Render("~/Content/Libraries/FontAwesome/font-awesome.min.css")
+@Styles.Render("~/Content/ImportCSV/Index.css")
+@Styles.Render("~/Content/Libraries/DataTables/dataTables.bootstrap.min.css")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/datatables")
+@Scripts.Render("~/Scripts/ImportCSV/Index.js")
+
+
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("Index", "ImportCsv", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <h3>Select CSV File</h3>
+            <div>
+                @Html.TextBoxFor(m => m.PostedFile, new { id = "flDealerDetails", Name = "flDealerDetails", type = "file", Class = "pull-left" })
+                <button id="btnUpload" type="submit" class="pull-left btn btn-primary">Upload & View CSV</button>
+                <div class="clearfix"></div>
+            </div>
+        }
+    </div>
+</div>
+@if (!string.IsNullOrEmpty(Model?.DealGrid))
+{
+    <div class="row">
+        <div class="col-sm-12 deal-grid table-responsive">
+            @Html.Raw(Model.DealGrid)
+        </div>
+    </div>
+}

@@ -1,0 +1,98 @@
+﻿body {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+/*validation classes*/
+.validation-summary-errors ul {
+    margin: 0;
+    padding: 0;
+}
+
+.validation-summary-errors ul li:before {
+    font-family: 'FontAwesome';
+    content: "\f071";
+    padding-right: 0.5rem;
+}
+
+.validation-summary-errors ul li {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    list-style: none;
+    color: #a94442;
+    background-color: #f2dede;
+    margin-top: 2rem;
+    width: 100%;
+}
+/*validation classes*/
+
+
+footer {
+    border-top: solid 1px #DDD;
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+}
+
+/*page load effect*/
+main .deal-grid {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+main .deal-grid.animated {
+    -webkit-animation: display 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+    animation: display 0.5s cubic-bezier(0.55, 0, 0.1, 1) forwards;
+}
+
+@-webkit-keyframes display {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes display {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+/*page load effect*/
+
+@media screen and (max-width: 767px) {
+    .dataTables_length {
+        padding-top: 1rem;
+    }
+
+    footer {
+        margin-top: 0;
+        padding: 0;
+        border: none;
+    }
+}
