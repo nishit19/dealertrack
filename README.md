@@ -20,10 +20,6 @@ Technical requirements
 *	If desired, any front-end framework and/or library can be used 
 *	For application logic, only .NET framework is permitted, please do not use a third-part framework for reading CSV file specifically. 
 
-### Pre-requisite
-* .Net Framework 4.5
-* ASP.NET MVC 5
-
 ### Running the test
 * Build the project to install all the libraries from nuget package manager
 * The CSV file structure is pre-defined, so you will have to use the file structure similar to the sample file 'Dealertrack-CSV-Example.csv' for testing
