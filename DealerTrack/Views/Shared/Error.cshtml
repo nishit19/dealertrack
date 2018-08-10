@@ -3,26 +3,33 @@
     Layout = "_Layout.cshtml";
     ViewBag.Title = "Error";
 }
+@Scripts.Render("~/Scripts/Error/Index.js")
 <h2>Error</h2>
-<div class="alert-danger alert">
-    @if (Response.StatusCode == 404)
-    {
-        <div>Sorry, the link you're trying to access is not available.</div>
-    }
-    else
-    {
-        <div>An unexpected error has occurred. Please try again later.</div>
-    }
-    
-    @if (Model != null)
-    {
-        <div>
-            
-            <h3 class="text-danger">Error.@Model.Exception.Message</h3>
+<div class="row">
+    <div class="alert-danger alert col-sm-12">
+        @if (Response.StatusCode == 404)
+        {
+            <div>Sorry, the link you're trying to access is not available.</div>
+        }
+        else
+        {
+            <div>An unexpected error has occurred. Please try again later.</div>
+        }
 
-            <h4 class="text-danger">An error occurred while processing your request.</h4>
 
-            @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName)
-        </div>
-    }
+
+
+        @if (Model != null)
+        {
+            <p class="padding-10">
+                <a href="javascript:;" id="lnktoggledetails"><span>Show</span><span class="hide-element">Hide</span> Details <span><i class="glyphicon glyphicon-menu-down"></i></span> <span class="hide-element"><i class="glyphicon glyphicon-menu-up"></i></span></a>
+            </p>
+            <p id="errordetail" class="hide-element padding-10">
+                @Model.Exception.Message
+                <br />
+                @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName)
+            </p>
+
+        }
+    </div>
 </div>

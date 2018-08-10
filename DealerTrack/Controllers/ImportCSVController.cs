@@ -28,6 +28,7 @@ namespace DealerTrack.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(HttpPostedFileBase flDealerDetails)
         {
+            
             var dealViewModel = new DealViewModel();
             try
             {
@@ -40,7 +41,7 @@ namespace DealerTrack.Controllers
                     {
                         DealDetails = lstDealDetails
                     };
-
+                   
                     dealViewModel.DealGrid =
                         RenderPartialViewToString("~/Views/ImportCsv/DealGrid.cshtml", dealGridViewModel);
                 }
