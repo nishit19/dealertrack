@@ -8,6 +8,11 @@ namespace DealerTrack.Data.Repository
 {
     public class DealDetailsRepository : IDealDetailsRepository
     {
+        /// <summary>
+        /// fetch data from csv 
+        /// </summary>
+        /// <param name="srCsv"></param>
+        /// <returns>List of DealDetails from csv</returns>
         public List<DealDetails> GetDealDataFromCsv(StreamReader srCsv)
         {
             var lstDeal = new List<DealDetails>();
